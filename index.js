@@ -2,6 +2,7 @@
 // compatible API routes.
 
 var express = require('express');
+var cors = require('cors');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
@@ -17,6 +18,10 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  javascriptKey: process.env.JAVASCRIPT_KEY || '',
+  restAPIKey: process.env.REST_API_KEY || '',
+  dotNetKey: process.env.DOT_NET_KEY || '',
+  clientKey: process.env.CLIENT_KEY || '',
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
